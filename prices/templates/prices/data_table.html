@@ -1,0 +1,24 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Open</th>
+      <th scope="col">High</th>
+      <th scope="col">Low</th>
+      <th scope="col">Close</th>
+      <th scope="col">Volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entry in data %}
+      <tr>
+        <th scope="row">{{entry.date}}</th>
+        <td>{{entry.open_price}}</td>
+        <td>{{entry.high}}</td>
+        <td>{{entry.low}}</td>
+        <td>{{entry.close_price}}</td>
+        <td>{{entry.volume}}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

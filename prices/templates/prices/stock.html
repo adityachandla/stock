@@ -1,0 +1,74 @@
+{% extends 'prices/base.html' %}
+{% load static %}
+
+{% block title %} stock name {% endblock title %}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'prices/base.css' %}">
+{% endblock css %}
+
+{% block content %}
+	<div class="loader"></div>
+
+	<div class="container bg-secondary">
+		<img src="{{ img_url }}" style="align:center; height:15%">
+	</div>
+	<div class="container bg-light">
+		<blockquote class="blockquote text-center">
+		  <p class="mb-0">{{ name }}</p>
+		  <footer class="blockquote-footer">{{ symbol }}</footer>
+		</blockquote>
+	</div>
+	<div class="container">
+		<div id="accordion">
+		  <div class="card">
+		    <div class="card-header" id="headingOne">
+		      <h5 class="mb-0">
+		        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="dailyButton">
+		          Daily stock data
+		        </button>
+		      </h5>
+		    </div>
+
+		    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+		      <div class="card-body" id="dailyDiv">
+
+		      </div>
+		    </div>
+		  </div>
+		  <div class="card">
+		    <div class="card-header" id="headingTwo">
+		      <h5 class="mb-0">
+		        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="weeklyButton">
+		          Weekly Stock data
+		        </button>
+		      </h5>
+		    </div>
+		    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+		      <div class="card-body" id="weeklyDiv">
+
+		      </div>
+		    </div>
+		  </div>
+		  <div class="card">
+		    <div class="card-header" id="headingThree">
+		      <h5 class="mb-0">
+		        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="monthlyButton">
+		          Monthly stock data
+		        </button>
+		      </h5>
+		    </div>
+		    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+		      <div class="card-body" id="monthlyDiv">
+
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	
+{% endblock content %}
+
+{% block js %}
+	<script type="text/javascript" src="{% static 'prices/stock.js' %}"></script>
+{% endblock js %}

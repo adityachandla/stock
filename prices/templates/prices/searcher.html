@@ -1,0 +1,41 @@
+{% extends 'prices/base.html' %}
+{% load static %}
+
+{% block title %}Home {% endblock title %}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'prices/base.css' %}">
+{% endblock css %}
+
+{% block content %}
+	<div class="loader"></div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-2">
+				
+			</div>
+			<div class="col-sm-8">
+				<div class="input-group m-3 p-4 input-group-lg">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="basic-addon1">Stock Name</span>
+				  </div>
+				  <input type="text" class="form-control" placeholder="name" aria-label="name" aria-describedby="basic-addon1" id='searchText'>
+			      <button class="btn btn-outline-primary my-2 my-sm-0" id='searchButton'>Search</button>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8 p-4" id="outputDiv">
+
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+{% block js %}
+	<script type="text/javascript" src="{% static 'prices/searcher.js' %}"></script>
+
+{% endblock js %}

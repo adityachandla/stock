@@ -1,0 +1,15 @@
+{% if matches %}
+	{% for match in  matches %}
+		<div class='card m-0' style="height:5rem; margin:0px"> 
+
+			<a href="/{{match.symbol}}/{{ match.name }}">
+			<div class="card-body">
+			    <h5 class="card-title">{{ match.symbol }}</h5>
+			    <h6 class="card-subtitle mb-2 text-muted">{{ match.name }}</h6>
+		  </div>
+		  </a>
+		</div>
+	{% endfor %}
+{% else %}
+	<div class='item'> No stock found </div>
+{% endif %}
